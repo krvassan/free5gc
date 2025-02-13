@@ -6,4 +6,4 @@ Un projet réalisé dans le cadre du module Projets infrastructures managées en
 Free5GC est une implémentation open source des fonctions réseau conforme aux standards 3GPP. Il vise à fournir une plateforme flexible et modulaire pour déployer et tester des réseaux 5G en environnement réel ou simulé.
 Notre objectif est donc de déployer ce free5gc dans un cluster Kubernetes avec une automatisation du cycle de vie à l’aide de Operator SDK et des tests pour vérifier le bon fonctionnement à l’aide d’un simulateur RAN.
 
-# Lire le README.md pour compilé et exécuter le projet
+# Lire le README.md à l'intérieur du dossier free5gc-controller pour compilé et exécuter le projet
