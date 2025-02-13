@@ -1,0 +1,194 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.17.1
+  name: free5gcs.k8s.startkubernetes.com.my.domain
+spec:
+  group: k8s.startkubernetes.com.my.domain
+  names:
+    kind: Free5gc
+    listKind: Free5gcList
+    plural: free5gcs
+    singular: free5gc
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: Free5gc is the Schema for the free5gcs API.
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: Free5gcSpec defines the desired state of Free5gc.
+            properties:
+              amf:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              ausf:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              nrf:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              nssf:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              pcf:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              smf:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              udm:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              udr:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+              upf:
+                description: Free5gcService définit un service Free5gc
+                properties:
+                  image:
+                    type: string
+                  network:
+                    description: Définit la configuration réseau
+                    properties:
+                      address:
+                        type: string
+                      port:
+                        type: integer
+                    type: object
+                  replicas:
+                    type: integer
+                type: object
+            type: object
+          status:
+            description: Free5gcStatus defines the observed state of Free5gc.
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

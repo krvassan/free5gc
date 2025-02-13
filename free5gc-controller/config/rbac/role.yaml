@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - k8s.startkubernetes.com.my.domain
+  resources:
+  - free5gcs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - k8s.startkubernetes.com.my.domain
+  resources:
+  - free5gcs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - k8s.startkubernetes.com.my.domain
+  resources:
+  - free5gcs/status
+  verbs:
+  - get
+  - patch
+  - update
