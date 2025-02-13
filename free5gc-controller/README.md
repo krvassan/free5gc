@@ -1,8 +1,8 @@
 # free5gc-controller
-// TODO(user): Add simple overview of use/purpose
+// To compile and execute our project, at first you need to run the command make generate and make manifests if you have done any changes in the free5gc_types.go file, located in api/v1. After that, you need to run the command make deploy or make run to test localy. And run the command kubectl apply -k config/samples/k8s.startkubernetes.com_v1_free5gc.yaml to create the instances.  
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+// Our project goal was to deploy Free5GC in K8s using OperatorSDK.
 
 ## Getting Started
 
@@ -16,12 +16,8 @@
 **Build and push your image to the location specified by `IMG`:**
 
 ```sh
-make docker-build docker-push IMG=<some-registry>/free5gc-controller:tag
+make docker-build docker-push IMG=krvassan/controller-manager
 ```
-
-**NOTE:** This image ought to be published in the personal registry you specified.
-And it is required to have access to pull the image from the working environment.
-Make sure you have the proper permission to the registry if the above commands don’t work.
 
 **Install the CRDs into the cluster:**
 
@@ -32,7 +28,7 @@ make install
 **Deploy the Manager to the cluster with the image specified by `IMG`:**
 
 ```sh
-make deploy IMG=<some-registry>/free5gc-controller:tag
+make deploy 
 ```
 
 > **NOTE**: If you encounter RBAC errors, you may need to grant yourself cluster-admin
@@ -42,7 +38,7 @@ privileges or be logged in as admin.
 You can apply the samples (examples) from the config/sample:
 
 ```sh
-kubectl apply -k config/samples/
+kubectl apply -f config/samples/k8s.startkubernetes.com_v1_free5gc.yaml
 ```
 
 >**NOTE**: Ensure that the samples has default values to test it out.
@@ -51,7 +47,7 @@ kubectl apply -k config/samples/
 **Delete the instances (CRs) from the cluster:**
 
 ```sh
-kubectl delete -k config/samples/
+kubectl delete -k config/samples/k8s.startkubernetes.com_v1_free5gc.yaml
 ```
 
 **Delete the APIs(CRDs) from the cluster:**
